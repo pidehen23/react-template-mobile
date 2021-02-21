@@ -87,8 +87,7 @@ const Regex = () => {
         <input className="input" type="file" accept="image/*" capture="user" onChange={onChange} />
       </div>
       <div className="image">{fileInfo.url && <img ref={imageRef} src={fileInfo.url || base64} alt="" />}</div>
-      <div>
-        &nbsp;&nbsp;
+      <div style={{ width: '100%', margin: '10px 0' }}>
         {fileInfo.url && (
           <Button type="primary" onClick={onDownLoadImg}>
             下载图片

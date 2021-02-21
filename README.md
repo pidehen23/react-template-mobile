@@ -16,7 +16,7 @@ npm run dev
 ## 目标功能
 
 - [x] 支持 typescript 的写法
-- [x] antd 按需加载功能
+- [x] antd-mobile 按需加载功能
 - [x] git 检测功能
 - [x] 热更新功能
 - [x] less 模块化支持
