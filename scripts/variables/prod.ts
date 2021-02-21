@@ -11,7 +11,7 @@ export default {
   productionGzip: true,
   productionGzipExtensions: ['js', 'css'],
   // 上线资源路径配置
-  assetsPublicPath: 'https://chenjiajing23.github.io/react-template-mobile/', // 'http://localhost:8080/'
+  assetsPublicPath: './react-template-mobile/', // 'http://localhost:8080/'
   // Run the build command with an extra argument to
   // View the bundle analyzer report after build finishes:
   // `npm run build --report`
