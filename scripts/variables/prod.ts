@@ -11,10 +11,10 @@ export default {
   productionGzip: true,
   productionGzipExtensions: ['js', 'css'],
   // 上线资源路径配置
-  assetsPublicPath: './', // 'http://localhost:8080/'
+  assetsPublicPath: 'http://localhost:8080/',
   // Run the build command with an extra argument to
   // View the bundle analyzer report after build finishes:
-  // `npm run build --report`
+  // `npm run build --analyze`
   // Set to `true` or `false` to always turn it on or off
   bundleAnalyzerReport: process.env.npm_config_analyze
 };

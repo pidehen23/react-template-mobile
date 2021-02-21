@@ -11,7 +11,7 @@ let html = fs.readFileSync(path.resolve(__dirname, '../../dist/index.html'), {
 });
 
 try {
-  const varScript = 'window.title=999999';
+  const varScript = 'window.title=react-template-mobile';
   html = html.replace('<head>', `<head><script>${varScript}</script>`);
 } catch (error) {
   console.error(error);
