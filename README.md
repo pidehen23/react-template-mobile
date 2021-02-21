@@ -9,7 +9,7 @@ cd react-template-mobile
 
 yarn
 
-npm run dev
+npm run start
 
 ```
 
