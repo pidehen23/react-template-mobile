@@ -1,15 +1,9 @@
-import { Button } from 'antd';
-import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { Button } from 'antd-mobile';
+import React, { useEffect, useRef, useState } from 'react';
 
-import '../style/regex.less';
-interface IProps {
-  [key: string]: any;
-}
+import '../style/take-photo.less';
 
-const Regex = (props: PropsWithChildren<IProps & RouteComponentProps>) => {
-  const {} = props;
-
+const Regex = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const [base64, setBase64] = useState('');
   const [fileInfo, setFileInfo] = useState<{ name: string; size: string; url: string }>({
@@ -94,13 +88,6 @@ const Regex = (props: PropsWithChildren<IProps & RouteComponentProps>) => {
       </div>
       <div className="image">{fileInfo.url && <img ref={imageRef} src={fileInfo.url || base64} alt="" />}</div>
       <div>
-        {/* <a
-          href="https://pic4.zhimg.com/v2-4bba972a094eb1bdc8cbbc55e2bd4ddf_r.jpg?source=172ae18b"
-          download="1.jpg"
-          rel="noopener"
-        >
-          下载图片
-        </a> */}
         &nbsp;&nbsp;
         {fileInfo.url && (
           <Button type="primary" onClick={onDownLoadImg}>

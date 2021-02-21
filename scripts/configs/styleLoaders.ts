@@ -49,10 +49,10 @@ const styleLoaders = function (isProd: boolean, shouldUseSourceMap = false) {
         }
       ]
     },
-    // 处理antd
+    // antd-mobile
     {
       test: /\.css$/,
-      include: path.resolve(PROJECT_ROOT, './node_modules/antd'),
+      include: path.resolve(PROJECT_ROOT, './node_modules'),
       use: [
         isProd ? { loader: MiniCssExtractPlugin.loader } : 'style-loader',
         {

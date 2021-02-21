@@ -1,5 +1,5 @@
 import Apis, { IApiMap } from 'good-apis';
-import { message } from 'antd';
+import { Toast } from 'antd-mobile';
 
 import env from '../config/env';
 import serverMap from '../config/apis';
@@ -90,7 +90,7 @@ Apis.onUseRes(
       }
       return Promise.reject(err.response);
     }
-    void message.error(err.message || '响应异常');
+    void Toast.fail(err.message || '响应异常');
     return Promise.reject(err);
   }
 );

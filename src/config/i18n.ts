@@ -8,8 +8,6 @@ import { getCurrentUrlLang } from '@/library/format';
 // language
 import en from '@/locale/en';
 import zh_CN from '@/locale/zh_CN';
-import zh_HK from '@/locale/zh_HK';
-import ja_JP from '@/locale/ja_JP';
 
 // 初始化当前语言（优先从本地获取）
 const lang = store.getState().lang;
@@ -29,7 +27,7 @@ if (isExitLang2 && getLangByUrl) {
 
 console.log('当前语言为：', currentLang);
 
-void i18n
+await i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
@@ -39,12 +37,6 @@ void i18n
       },
       zh_CN: {
         translation: zh_CN
-      },
-      zh_HK: {
-        translation: zh_HK
-      },
-      ja_JP: {
-        translation: ja_JP
       }
     },
     lng: currentLang || 'zh_CN',

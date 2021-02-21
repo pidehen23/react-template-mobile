@@ -1,5 +1,5 @@
 import React, { Component, ErrorInfo } from 'react';
-import { Button } from 'antd';
+import { Button } from 'antd-mobile';
 
 import './error-boundary.less';
 
@@ -40,7 +40,7 @@ class ErrorBoundary extends Component<IProps, IState> {
       <section styleName="component-error-boundary">
         <div styleName="info">
           <h2 styleName="title">Something went wrong ~~~ ^··^</h2>
-          <Button type="primary" danger onClick={this.onReload}>
+          <Button type="primary" onClick={this.onReload}>
             重新加载
           </Button>
         </div>

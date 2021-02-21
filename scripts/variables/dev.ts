@@ -9,6 +9,6 @@ export default {
   networkHost: address.ip(),
   port: 8080,
   autoOpenBrowser: false, // 自动打开浏览器
-  isInspectorComponent: true, // 组件定位
+  isInspectorComponent: false, // 组件定位
   assetsPublicPath: '/',
 };

@@ -1,15 +1,13 @@
 .demo {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  padding: 10px 15px;
   color: red;
   transition: all 0.3s ease-in-out;
 
-  .content {
+  .header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,19 +17,11 @@
     }
   }
 
-  img {
-    height: 400px;
+  .content {
+    margin: 20px 0;
   }
 
-  .cover {
-    width: 400px;
-    height: 200px;
-    background-image: url('../assets/good.png');
-  }
-}
-
-:global {
-  .chenjiajing {
-    background-color: #ccc;
+  .image {
+    max-width: 100%;
   }
 }

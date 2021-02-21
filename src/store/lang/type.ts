@@ -1,5 +1,5 @@
 // 可选的语言列表
-export type ILangType = 'en' | 'zh_CN' | 'zh_HK' | 'ja_JP';
+export type ILangType = 'en' | 'zh_CN';
 
 // 语言详情列表
 export interface ILangDetailInfo {
