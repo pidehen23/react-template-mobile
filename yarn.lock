@@ -7645,10 +7645,10 @@ postcss-less@^3.1.0, postcss-less@^3.1.4:
   dependencies:
     postcss "^7.0.14"
 
-postcss-less@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/postcss-less/download/postcss-less-4.0.0.tgz#88ad544041750023650f249a896930a741506390"
-  integrity sha1-iK1UQEF1ACNlDySaiWkwp0FQY5A=
+postcss-less@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.npm.taobao.org/postcss-less/download/postcss-less-4.0.1.tgz#73caf5dac056d4b706f4cc136cefeaf4e79067a4"
+  integrity sha1-c8r12sBW1LcG9MwTbO/q9OeQZ6Q=
   dependencies:
     postcss "^8.1.2"
 
