@@ -9,7 +9,7 @@ import WebpackBuildNotifierPlugin from 'webpack-build-notifier';
 
 import config from '../variables';
 import { assetsPath } from '../utils/getPath';
-import { HMR_PATH, PROJECT_NAME, PROJECT_ROOT, __DEV__, INSPECTOR_COMPONENT } from '../utils/constants';
+import { HMR_PATH, PROJECT_NAME, PROJECT_ROOT, __DEV__, INSPECTOR_COMPONENT, PUBLIC_PATH } from '../utils/constants';
 
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
@@ -57,7 +57,7 @@ const commonConfig: Configuration = {
       __DEV__ ? 'js/[name].chunk.js' : 'js/[name].[contenthash:8].chunk.js'
     ),
     path: resolve(PROJECT_ROOT, `./${config.base.assetsRoot}`),
-    publicPath: config.base.assetsPublicPath, //通常是CDN地址
+    publicPath: PUBLIC_PATH, //通常是CDN地址
     hashSalt: PROJECT_NAME,
   },
 

@@ -25,10 +25,6 @@ const webpackConfig = merge(commonConfig, {
 
   devtool: shouldUseSourceMap ? "source-map" : false,
 
-  output: {
-    publicPath: config.prod.assetsPublicPath
-  },
-
   module: {
     rules: [
       ...styleLoaders(true, false)

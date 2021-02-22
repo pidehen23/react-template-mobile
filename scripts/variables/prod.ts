@@ -10,8 +10,8 @@ export default {
   // npm install --save-dev compression-webpack-plugin
   productionGzip: true,
   productionGzipExtensions: ['js', 'css'],
-  // 上线资源路径配置
-  assetsPublicPath: 'http://localhost:8080/',
+  // 上线资源路径配置，一般是CDN路径 例如：http://localhost:8080/
+  assetsPublicPath: process.env.PUBLIC_URL || '',
   // Run the build command with an extra argument to
   // View the bundle analyzer report after build finishes:
   // `npm run build --analyze`

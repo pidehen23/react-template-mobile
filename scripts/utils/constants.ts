@@ -2,6 +2,7 @@ import path from 'path';
 import { argv } from 'yargs';
 
 import env from '../variables';
+import getPublicUrlOrPath from './getPublicUrlOrPath';
 
 const __DEV__ = process.env.NODE_ENV !== 'production';
 const ENABLE_ANALYZE = !!argv.analyze;
@@ -16,6 +17,13 @@ const COPYRIGHT = `/** @preserve Powered by react-template-mobile (https://githu
 const PROJECT_ROOT = path.resolve(__dirname, '../../');
 const PROJECT_NAME = path.parse(PROJECT_ROOT).name;
 const HMR_PATH = '/__webpack_hmr';
+const PUBLIC_PATH = getPublicUrlOrPath(
+  __DEV__,
+  require(path.resolve(PROJECT_ROOT, './package.json')).homepage,
+  env.prod.assetsPublicPath
+);
+
+console.info('打包路径为=>', PUBLIC_PATH);
 
 export {
   __DEV__,
@@ -28,5 +36,6 @@ export {
   PROJECT_NAME,
   PROJECT_ROOT,
   HMR_PATH,
+  PUBLIC_PATH,
   INSPECTOR_COMPONENT,
 };
