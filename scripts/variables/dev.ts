@@ -10,5 +10,6 @@ export default {
   port: 8080,
   autoOpenBrowser: false, // 自动打开浏览器
   isInspectorComponent: false, // 组件定位
+  developmentSourceMap: true,
   assetsPublicPath: '/',
 };

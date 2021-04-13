@@ -1,6 +1,6 @@
 import os from 'os';
 import path from 'path';
-import { BannerPlugin, ids, DefinePlugin, NoEmitOnErrorsPlugin } from 'webpack';
+import { BannerPlugin, ids, DefinePlugin, NoEmitOnErrorsPlugin, WebpackPluginInstance } from 'webpack';
 import { merge } from 'webpack-merge';
 import TerserPlugin from 'terser-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -8,7 +8,7 @@ import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 // import SpeedMeasurePlugin from 'speed-measure-webpack-plugin';
-// import SizePlugin from 'size-plugin';
+import SizePlugin from 'size-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CompressionWebpackPlugin from 'compression-webpack-plugin';
 
@@ -27,7 +27,7 @@ const webpackConfig = merge(commonConfig, {
 
   module: {
     rules: [
-      ...styleLoaders(true, false)
+      ...styleLoaders(true, shouldUseSourceMap)
     ]
   },
 
@@ -78,9 +78,7 @@ const webpackConfig = merge(commonConfig, {
         extractComments: false, // 是否提取注释到单独文件
       }),
       // webpack5 使用
-      new CssMinimizerPlugin({
-        sourceMap: shouldUseSourceMap
-      }),
+      new CssMinimizerPlugin({}) as unknown as WebpackPluginInstance,
     ],
     splitChunks: {
       cacheGroups: {
@@ -112,7 +110,7 @@ if (config.prod.productionGzip) {
       minRatio: 0.8,
       threshold: 10240,
     },
-  }));
+  }) as unknown as WebpackPluginInstance);
 };
 
 let prodConfig = webpackConfig;
@@ -121,7 +119,7 @@ let prodConfig = webpackConfig;
 if (config.prod.bundleAnalyzerReport) {
   prodConfig.plugins!.push(
     // todo webpack5 不支持 https://github.com/euclid1990/write-assets-webpack-plugin/issues/4
-    // new SizePlugin({ writeFile: false, color: 'green' }),
+    new SizePlugin({ writeFile: false, color: 'green' }),
     new BundleAnalyzerPlugin({
       openAnalyzer: true,
       analyzerPort: 8888
