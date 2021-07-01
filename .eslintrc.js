@@ -30,6 +30,25 @@ module.exports = {
     },
   },
   rules: {
+    "prettier/prettier": ["error", {
+      "printWidth": 120,
+      "tabWidth": 2,
+      "useTabs": true,
+      "singleQuote": true,
+      "semi": true,
+      "trailingComma": "none",
+      "bracketSpacing": true,
+      "arrowParens": "avoid",
+      "overrides": [
+        {
+          "files": "*.md",
+          "options": {
+            "tabWidth": 2
+          }
+        }
+      ]
+    }],
+    "indent": "off",
     semi: ['error', 'always'],
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/no-unsafe-assignment': 'off',

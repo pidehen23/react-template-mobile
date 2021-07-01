@@ -2,10 +2,10 @@
 import { History } from 'history';
 
 declare global {
-  interface Window extends CICD {
-    router: History<unknown>;
-    apis: IAPIs;
-  }
+	interface Window extends CICD {
+		router: History<unknown>;
+		apis: IAPIs;
+	}
 }
 
 export {};

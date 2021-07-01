@@ -6,45 +6,45 @@
  * @LastEditTime: 2021-02-23 00:35:42
  */
 const serverMap: IServerMap = {
-  baseServer: {
-    baseMap: {
-      prod: 'http://prod.apis.com',
-      stage: 'https://state.apis.com',
-      test: 'https://test.apis.com',
-      dev: 'https://dev.apis.com',
-      local: `${window.location.origin}` || 'http://localhost:8080' // 本地开发后端地址
-    },
-    default: true
-  }
-  // 更多
-  // baseServer2: {
-  //   baseMap: {
-  //     prod: 'http://prod.apis.com',
-  //     stage: 'https://state.apis.com',
-  //     test: 'https://test.apis.com',
-  //     dev: 'https://dev.apis.com',
-  //     local: 'http://localhost:8080'
-  //   },
-  //   default: true
-  // }
+	baseServer: {
+		baseMap: {
+			prod: 'http://prod.apis.com',
+			stage: 'https://state.apis.com',
+			test: 'https://test.apis.com',
+			dev: 'https://dev.apis.com',
+			local: `${window.location.origin}` || 'http://localhost:8080' // 本地开发后端地址
+		},
+		default: true
+	}
+	// 更多
+	// baseServer2: {
+	//   baseMap: {
+	//     prod: 'http://prod.apis.com',
+	//     stage: 'https://state.apis.com',
+	//     test: 'https://test.apis.com',
+	//     dev: 'https://dev.apis.com',
+	//     local: 'http://localhost:8080'
+	//   },
+	//   default: true
+	// }
 };
 
 export default serverMap;
 
 interface IBaseMap {
-  prod: string;
-  stage: string;
-  test: string;
-  dev: string;
-  local: string;
+	prod: string;
+	stage: string;
+	test: string;
+	dev: string;
+	local: string;
 }
 
 interface IConfig {
-  default?: boolean;
-  baseURL?: string;
-  baseMap: IBaseMap;
+	default?: boolean;
+	baseURL?: string;
+	baseMap: IBaseMap;
 }
 
 interface IServerMap {
-  [key: string]: IConfig;
+	[key: string]: IConfig;
 }

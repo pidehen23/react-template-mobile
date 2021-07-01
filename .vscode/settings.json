@@ -319,7 +319,7 @@
     "enable": true
   },
   "eslint.options": {},
-  "prettier.printWidth": 80,
+  "prettier.printWidth": 120,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -363,7 +363,5 @@
     }
   },
   "eslint.format.enable": true,
-  "cSpell.words": [
-    "blod"
-  ]
+  "cSpell.words": ["blod"]
 }

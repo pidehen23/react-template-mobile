@@ -6,11 +6,11 @@ import initialState from './store';
 import { ILangState } from './type';
 
 export default handleActions(
-  {
-    [`${types.setCommonLang}`]: (state: ILangState, action: AnyAction) => ({
-      ...state,
-      ...action.payload
-    })
-  },
-  initialState
+	{
+		[`${types.setCommonLang}`]: (state: ILangState, action: AnyAction) => ({
+			...state,
+			...action.payload
+		})
+	},
+	initialState
 );
