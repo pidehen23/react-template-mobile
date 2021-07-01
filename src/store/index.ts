@@ -7,8 +7,8 @@ import demo from './demo/reducer';
 import lang from './lang/reducer';
 
 const reducers = combineReducers({
-  demo,
-  lang
+	demo,
+	lang
 });
 
 const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk, promise)));

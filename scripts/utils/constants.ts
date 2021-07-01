@@ -5,8 +5,8 @@ import env from '../variables';
 import getPublicUrlOrPath from './getPublicUrlOrPath';
 
 const __DEV__ = process.env.NODE_ENV !== 'production';
-const ENABLE_ANALYZE = !!argv.analyze;
-const ENABLE_OPEN = (argv.open || env.dev.autoOpenBrowser) as true | string; // 是否自动打开浏览器
+const ENABLE_ANALYZE = !!(argv as Record<string, any>).analyze;
+const ENABLE_OPEN = ((argv as Record<string, any>).open || env.dev.autoOpenBrowser) as true | string; // 是否自动打开浏览器
 const INSPECTOR_COMPONENT = env.dev.isInspectorComponent;
 
 const HOST = env.dev.host;

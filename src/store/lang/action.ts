@@ -12,5 +12,5 @@ export const setCommonLang = createAction(types.setCommonLang, (payload: Partial
  * @param {'en'|'zh-cn'} payload
  */
 export const onSwitchLang = (local: ILangType) => (dispatch: Dispatch<AnyAction>) => {
-  dispatch(setCommonLang({ local }));
+	dispatch(setCommonLang({ local }));
 };

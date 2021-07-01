@@ -18,33 +18,33 @@ const isExitLang = lang.langList.some(v => v.key === LocalLang);
 const isExitLang2 = lang.langList.some(v => v.key === getLangByUrl);
 
 if (isExitLang && LocalLang) {
-  currentLang = LocalLang;
+	currentLang = LocalLang;
 }
 
 if (isExitLang2 && getLangByUrl) {
-  currentLang = getLangByUrl;
+	currentLang = getLangByUrl;
 }
 
 console.log('当前语言为：', currentLang);
 
 await i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources: {
-      en: {
-        translation: en
-      },
-      zh_CN: {
-        translation: zh_CN
-      }
-    },
-    lng: currentLang || 'zh_CN',
-    fallbackLng: currentLang || 'zh_CN', // 选择默认语言，选择内容为上述配置中的key，即en/zh
-    debug: process.env.NODE_ENV === 'development',
-    interpolation: {
-      escapeValue: false // not needed for react as it escapes by default
-    }
-  });
+	.use(LanguageDetector)
+	.use(initReactI18next)
+	.init({
+		resources: {
+			en: {
+				translation: en
+			},
+			zh_CN: {
+				translation: zh_CN
+			}
+		},
+		lng: currentLang || 'zh_CN',
+		fallbackLng: currentLang || 'zh_CN', // 选择默认语言，选择内容为上述配置中的key，即en/zh
+		debug: process.env.NODE_ENV === 'development',
+		interpolation: {
+			escapeValue: false // not needed for react as it escapes by default
+		}
+	});
 
 export default i18n;

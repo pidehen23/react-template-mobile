@@ -6,13 +6,13 @@ import { useState, useEffect, useRef } from 'react';
  * @use  setCount(count - 1).then((count) => console.log(`最新count的值： ${count}`));
  */
 export const useAsyncState = <T = any>(initialValue: T) => {
-  const [value, setValue] = useState<T>(initialValue);
-  const setter = (x: T) =>
-    new Promise<T>(resolve => {
-      setValue(x);
-      resolve(x);
-    });
-  return [value, setter] as [typeof value, typeof setter];
+	const [value, setValue] = useState<T>(initialValue);
+	const setter = (x: T) =>
+		new Promise<T>(resolve => {
+			setValue(x);
+			resolve(x);
+		});
+	return [value, setter] as [typeof value, typeof setter];
 };
 
 /**
@@ -20,9 +20,9 @@ export const useAsyncState = <T = any>(initialValue: T) => {
  * @use  const propsRef = useRefProps(props)  const { a } = propsRef.current
  */
 export const useRefProps = <T>(props: T) => {
-  const ref = useRef<T>(props);
-  useEffect(() => {
-    ref.current = props;
-  });
-  return ref;
+	const ref = useRef<T>(props);
+	useEffect(() => {
+		ref.current = props;
+	});
+	return ref;
 };

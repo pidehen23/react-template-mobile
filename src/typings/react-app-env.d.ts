@@ -3,8 +3,8 @@
 /// <reference types="react-dom" />
 
 declare namespace NodeJS {
-  interface ProcessEnv {
-    readonly NODE_ENV?: 'development' | 'production';
-    readonly PUBLIC_URL: string;
-  }
+	interface ProcessEnv {
+		readonly NODE_ENV?: 'development' | 'production';
+		readonly PUBLIC_URL: string;
+	}
 }

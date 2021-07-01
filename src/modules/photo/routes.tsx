@@ -5,11 +5,11 @@ import { IRouteInfo } from '@/main/router';
 const TakePhoto = withRouter(React.lazy(() => import('./pages/TakePhoto')));
 
 const routeList: IRouteInfo[] = [
-  {
-    path: '/:language/take-photo',
-    exact: false,
-    component: () => <TakePhoto />
-  }
+	{
+		path: '/:language/take-photo',
+		exact: false,
+		component: () => <TakePhoto />
+	}
 ];
 
 export default routeList;

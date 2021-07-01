@@ -12,11 +12,11 @@ import Local from './local';
 const InspectorWrapper = process.env.NODE_ENV === 'development' ? Inspector : React.Fragment;
 
 const App = (props: JSX.IntrinsicAttributes) => (
-  <InspectorWrapper keys={['control', 'shift', 'command', 'c']}>
-    <Provider store={store}>
-      <Local {...props} />
-    </Provider>
-  </InspectorWrapper>
+	<InspectorWrapper keys={['control', 'shift', 'command', 'c']}>
+		<Provider store={store}>
+			<Local {...props} />
+		</Provider>
+	</InspectorWrapper>
 );
 
 export default hot(App);
